@@ -1,0 +1,108 @@
+JShell: 
+JShell is an interactive command-line tool. It is part of the Java Development Kit (JDK) and serves as Read-Eval-Print Loop (REPL) environment for the Java programming language.
+
+JVM:
+Java virtual machine which enables the execution of Java bytecode.
+Java compiler converts Java source code into bytecode, JVM then takes this bytecode and interprets it, translating it into machine code which OS can understand.
+
+JRE: Java Runtime Environment
+JRE creates a runtime environment in which the program can run effectively. It provides the necessary components to run Java applications. It includes the JVM, class libraries
+and other supporting files.
+
+JDK: Java Development Kit
+JDK is a software development environment used for creating Java applications. It includes tools and libraries necessary for compiling, debugging, and running Java code.
+
+Which file will run:
+One file will run which contains the main method with specific signature --> public static void main()
+Java is object oriented, means everything is written in objects, for objects we need classes.
+After running the file, a new file will be generated with name = <filename>.class ---> contains bytecode
+
+Steps to run a java file:
+1. compile it -> javac <filename>.java 
+   like javac myfile.java
+2. run file -> java myfile
+
+Print some thing: 
+System.out.print() --> no new line 
+System.out.println() --> out put will be in new line
+
+Data Types:
+1. Primituve -- built in
+   Integer, float, charcater, boolean
+
+2. User defined
+
+Memory: Stack and Heap
+both stack and heap are created by JVM and are stored in RAM. Heap has more memory than stack.
+
+Stack:
+-- stores variables on temorary basis.
+-- has separate memory block for methods.
+-- store primitive data types like char, int, bool.
+-- store references for the objects in the heap. [*** when object is created using new keyword, it is stored in the heap memory, but its reference is stored in stack***]
+-- reference are of 3 types : strong, weak, soft
+-- there are multiple stacks as each thread has its own stack memory but thread share common heap memory [*** reference from Operating system concept***]
+
+Heap:
+-- when the things stored in stack are no longer useful for us like variables or function call or objects, their reference are removed from the stack, but the object which
+are already declared will remain in the heap memory.
+-- removal of these is done by [***Garbage Collector***]
+
+-- for this , there is a command : system.gc(), but there is no gurantee that garbage collector will run, so it is called automatic memory management.
+
+Array:
+-- int x[] = {1, 2, 3} ,    int x[] = new int[4] ,      jagged array : in which number of columns are not specified.
+
+String: [ String x = "Jatin" ]
+it is object in java. so when we create a string, it will be stored in heap memory. In heap , it is stored in special are calles string pool. 
+
+StringBuffer: [ StringBuufer sb = new String Buffer() ]
+StringBuffer is a class that represents a mutable sequence of characters. StringBuffer allows for dynamic changing to its content without creating new objects for each
+change. This makes it more efficient for operations involving frequent string manipulations, such as appending, inserting, deleting, or replacing characters within a string. 
+
+-- operations like append(), insert(), delete(), and replace()
+-- by default , provides the space of 16 bytes.
+-- it uses continous memory allocation.
+
+Static kewword:
+-- static variable is shared by all the objects.
+-- static variables can be called directly with class name, without creating new objects.
+
+-- consider the code:
+
+class phone {
+  String name;
+  int price;
+
+  public phone() ---> constuctor
+  { price = 100}
+
+  static -->> static block
+  {name = "samsung"}
+
+  // other functions or varibles blocks below
+}
+
+in the above code, constructor will be called whenever the object was created, but static block will be eecuted only single time
+because when we are working with class and objects, there are 2 things
+1. class loads   2. objects are instantiated
+
+-- class will load only once, there is a special area in JVM , which is class loader, which contains all classes which are loaded.
+-- our classes will be loaded from our library to the class loader and it happen only once.
+
+
+if we dont create objects above things will not happen, but still if we want to do this , there is a class in java 
+
+[ *** Class.forName(className: "phone") *** ]--> phone class will be loaded to class loader.
+
+Super:
+-- used to call constructor of super class 
+-- we can also pass paramete to super() like super(n).
+
+this():
+this() is used to run the default constuctor when there are multiple constructor in the class 
+
+for example , there are 2 constuctor = non parametrased (let say it is default one) and parameterised, so on using this() , default one will be executed.
+
+Anonymous object:
+-- delcared like : new A() -->> cannot be reused
