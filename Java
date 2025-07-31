@@ -106,3 +106,41 @@ for example , there are 2 constuctor = non parametrased (let say it is default o
 
 Anonymous object:
 -- delcared like : new A() -->> cannot be reused
+
+Anonymous class : which we know that it will be used only once:
+
+example code
+   there is A class already declared (let assume it)
+
+  A obj = new A()
+{
+   public void show() {System.out.println("hello");}
+};
+
+
+by providing the function in this place, we are saying that forgot the already declared function or design of class, just use the current passes metjods, variables.
+
+To use Every class, we need to import it :
+-- but in system.out.println() , we dont import system class
+-- system class is in java.lang package, and it is by default present in every java file, which is [import java.lang.*] ---> import everyting from java.lang
+-- here "*" is for all the files , not the folders.
+
+Final Keyword:
+use to make variables constant --> final int x = 10
+-- we can also make methods/functions as Final --> so that they cannot be override, and can be used with class so that it cannot be inherited.
+
+Interfaces:
+when we have all abstract methods , so instead of having abstract class we use Interfaces
+-- Interfaces are not class
+-- by default , every methods in interfaces is [***Public Abstract***], so no need to mention abstract keyword
+interface A {
+void show(){} ----> show is public abstract method by default
+}
+
+-- all variables inside interfaces are final and static
+-- we use ***IMPLEMENT*** keyword with interfaces, when extending the properties to other class and only methods are extended to other class not variables
+--***internface dont have their own memory in the heap***
+-- when we implement an interface with interface , we use EXTENDS keywords like in classes
+
+Enums :  Enumerations
+special data type used to define a collection of named constants.
