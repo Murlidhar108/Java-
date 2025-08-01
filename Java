@@ -142,5 +142,23 @@ void show(){} ----> show is public abstract method by default
 --***internface dont have their own memory in the heap***
 -- when we implement an interface with interface , we use EXTENDS keywords like in classes
 
+Functional interfaces: 
+-- interface which have only one fcuntion
+-- we can also annotate it by ---> @FunctionalInterface
+-- after specifying it as functional interface by annotating it , if we make more than one function , --> we will get compile time error.
+
+Types of internfaces:
+1. normal --> simple internfaces
+2. SAM --> (single abstract method) --> functional interfaces
+3. Marker --> interfaces which have no methods  or blank interface
+
 Enums :  Enumerations
 special data type used to define a collection of named constants.
+
+
+*** 3 important topics ***
+1. collections ApI 
+2. Collection
+3. Collections
+
+-- collection like    list , queue, set ....
